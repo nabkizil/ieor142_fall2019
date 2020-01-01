@@ -1,0 +1,157 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+```{r}
+#install.packages("softImpute")
+#install.packages("ranger")
+
+
+library(randomForest)
+library(ranger)
+library(dplyr)
+library(tidyverse)
+library(reshape2)
+
+library(softImpute)
+
+OSR2 <- function(predictions, train, test) {
+  SSE <- sum((test - predictions)^2)
+  SST <- sum((test - mean(train))^2)
+  r2 <- 1 - SSE/SST
+  return(r2)
+}
+
+ratings <- read_csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw5/MusicRatings.csv")
+View(ratings)
+songs <- read.csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw5/Songs.csv")
+users <- read.csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw5/Users.csv")
+mergedratings <- merge(ratings, songs, by.x = "songID")
+
+# clean up
+range<-range(mergedratings$rating, na.rm = FALSE)
+#ratings$userID <- as.factor(ratings$userID)
+#ratings$songID <- as.factor(ratings$songID)
+#ratings$rating <- as.factor(ratings$rating)
+#users$userID <- as.factor(users$userID)
+#songs$songID <- as.factor(songs$songID)
+#songs$songName <- as.factor(songs$songName)
+#songs$year <- as.factor(songs$year)
+#songs$artist <- as.factor(songs$artist)
+#songs$genre <- as.factor(songs$genre)
+
+
+set.seed(345)
+train.ids <- sample(nrow(mergedratings), 0.92*nrow(mergedratings))
+test <- mergedratings[-train.ids,]
+train <- mergedratings[train.ids,]
+
+# split training into real training and validation set
+# for hyperparameter search
+val1.ids <- sample(nrow(train), (4/92)*nrow(train))
+val1 <- train[val1.ids,]
+train <- train[-val1.ids,]
+
+# for blending
+val2.ids <- sample(nrow(train), (4/92)*nrow(train))
+val2 <- train[val2.ids,]
+train <- train[-val2.ids,]
+
+# First try CF
+mat.train <- Incomplete(train$userID, train$songID, train$rating)
+summary(train)
+### See Lab8-biscale.R for standardizing movie rating matrix using biScale function. Essentially X_ij - alpha_i - beta_j. For some technical reason, biScale doesn't work for the MovieLensFeatures data, but it seems to work for the dataset for HW5. We'll double check that. Currently, this issue is still a puzzle.
+mat.train.centered <- biScale(mat.train, maxit = 1000, row.scale = FALSE, col.scale = FALSE)
+
+# TODO: GET THREE HIGHEST ALPHAS AND BETAS & Recover their id's in the tables
+alpha <- attr(mat.train.centered, "biScale:row")$center
+beta <- attr(mat.train.centered, "biScale:column")$center
+
+# compute validation set MAE for rank = 1,2,...,20
+# softImpute: fit a low-rank matrix approximation to a matrix with missing values
+# impute(object, i, j): produce predictions from the low-rank solution of softImpute
+mae.vals = rep(NA, 20)
+for (rnk in seq_len(20)) {
+  print(str_c("Trying rank.max = ", rnk))
+  mod <- softImpute(mat.train, rank.max = rnk, lambda = 0, maxit = 1000)
+  preds <- impute(mod, val1$userID, val1$songID) %>% pmin(3.43) %>% pmax(1) # clip rating from 1 to 5
+  mae.vals[rnk] <- mean(abs(preds - val1$rating))
+}
+
+mae.val.df <- data.frame(rnk = seq_len(20), mae = mae.vals)
+ggplot(mae.val.df, aes(x = rnk, y = mae)) + geom_point(size = 1) + 
+  ylab("Validation MAE") + xlab("Number of Archetypal Users") + 
+  theme_bw() + theme(axis.title=element_text(size=10), axis.text=element_text(size=10))
+
+minval <- min(mae.vals)
+
+# choose k = 9
+set.seed(345)
+mod.final <- softImpute(mat.train, rank.max = 9, lambda = 0, maxit = 1000)
+preds <- impute(mod.final, test$userID, test$songID) %>% pmin(3.43) %>% pmax(1)
+
+mean(abs(preds - test$rating))
+sqrt(mean((preds - test$rating)^2))
+OSR2(preds, train$rating, test$rating)
+
+# MERGE DATA SETS FOR BLENDING INSIGHTS
+# Now try a linear regression without CF as a varible
+lin.mod <- lm(rating ~ . -userID -songID -songName -artist -songName , data = train)
+summary(lin.mod)
+
+preds.lm <- predict(lin.mod, newdata = test) %>% pmin(5) %>% pmax(1)
+mean(abs(preds.lm - test$rating))
+sqrt(mean((preds.lm - test$rating)^2))
+OSR2(preds.lm, train$rating, test$rating)
+
+
+# Now try random forests (Warning: this took 2 hours to run)
+set.seed(345)
+rf.mod <- ranger(rating ~ . -userID -songID -songName -artist -songName, 
+                 data = train, 
+                 mtry = floor((ncol(train) - 3)/3), 
+                 num.trees = 100,
+                 verbose = TRUE)
+
+preds.rf <- predict(rf.mod, data = test)
+preds.rf <- preds.rf$predictions
+mean(abs(preds.rf - test$rating))
+sqrt(mean((preds.rf - test$rating)^2))
+OSR2(preds.rf, train$rating, test$rating)
+
+
+# --- Blending
+val.preds.cf <- impute(mod.final, val2$userID, val2$songID)
+val.preds.lm <- predict(lin.mod, newdata = val2)
+val.preds.rf <- predict(rf.mod, data = val2)$predictions
+
+# Build validation set data frame
+val.blending_df = data.frame(rating = val2$rating, cf_preds = val.preds.cf, lm_preds = val.preds.lm, rf_preds = val.preds.rf)
+#val.blending_df = data.frame(rating = val2$rating, cf_preds = val.preds.cf, lm_preds = val.preds.lm, )
+
+# Train blended model
+blend.mod = lm(rating ~ . -1, data = val.blending_df) # -1: no intercept
+summary(blend.mod)
+
+# Get predictions on test set
+test.preds.cf <- impute(mod.final, test$userID, test$songID)
+test.preds.lm <- predict(lin.mod, newdata = test)
+test.preds.rf <- predict(rf.mod, data = test)$predictions
+
+test.blending_df = data.frame(rating = test$rating, cf_preds = test.preds.cf, lm_preds = test.preds.lm, rf_preds = test.preds.rf)
+#test.blending_df = data.frame(rating = test$rating, cf_preds = test.preds.cf, lm_preds = test.preds.lm)
+
+test.preds.blend <- predict(blend.mod, newdata = test.blending_df)
+
+mean(abs(test.preds.blend - test$rating))
+sqrt(mean((test.preds.blend - test$rating)^2))
+OSR2(test.preds.blend, train$rating, test$rating)
+OSR2(test.preds.cf, train$rating, test$rating)
+OSR2(test.preds.lm, train$rating, test$rating)
+OSR2(test.preds.rf, train$rating, test$rating)
+
+
+```
+

@@ -1,0 +1,130 @@
+---
+title: "HW1"
+author: '3032247297'
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+3)
+
+```{r}
+#install.packages(c("dplyr", "ggplot2", "GGally", "broom"))
+library(dplyr)
+library(ggplot2)
+library(GGally)
+library(readxl)
+#install.packages("car")
+library(car)
+wrangler <- read.csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw1/Wrangler142-Fall2019.csv")
+
+#wrangler
+
+```
+
+
+
+a)
+
+i) the linreg equation of my model is $y = -952.18 + 257.86(x) + \epsilon$. Someone should interpret the independent variables as "for every 1 change in this variable, sales changes by the coefficient of the variable".
+
+ii) I selected the variables based on their p values and statistical significance.
+
+iii) Yes, the signs of the coefficients make sense because we would expect that if more people are searching for wranglers, then they are more inclined to buy one leading to more sales. As for unemployment, when unemployment goes down, people have more money to spend because they have income, therefore when unemployment goes up, sales should go down. For CPI, if it goes up, then goods become more expensive therefore people are less likely to buy an item such as a Jeep Wrangler.
+
+iv) The model fits our training data with an r squared value of .79 so it is doing a great job of predicting the training values, this is because we are using the training data to build our model so it should fit to it pretty well.
+
+
+```{r}
+broncos <- read_excel("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw1/multiTimeline (1).xlsx", skip = 1)
+
+rsq <- function (x, y) cor(x, y) ^ 2
+
+
+wrangler$fordquery <- broncos$`ford bronco: (United States)`
+wrangler.train <- filter(wrangler, Year >= 2010 & Year <= 2015 )
+
+wrangler.test <- filter(wrangler, Year >= 2016 & Year <= 2019 )
+
+wrangler.Indep.Vars <- wrangler[5:8]
+
+wranglerSales.predict <- lm(WranglerSales ~ Unemployment + WranglerQueries + CPI.All + CPI.Energy, data = wrangler.train)
+
+#summary(wranglerSales.predict)
+
+#drop cpi energy
+wranglerSales.predict1 <- lm(WranglerSales ~ Unemployment + WranglerQueries + CPI.All, data = wrangler.train)
+#summary(wranglerSales.predict1)
+
+#drop cpi.all
+wranglerSales.predict2 <-lm(WranglerSales ~ Unemployment + WranglerQueries, data = wrangler.train)
+#summary(wranglerSales.predict2)
+
+rsq(predict(wranglerSales.predict1, wrangler.train), wrangler.train$WranglerSales)
+
+
+```
+
+
+b)
+
+```{r}
+wranglerSales.predict_season <- lm(WranglerSales ~ Unemployment + WranglerQueries + CPI.All + CPI.Energy + MonthFactor, data = wrangler.train)
+summary(wranglerSales.predict_season)
+```
+
+i) The new model has several coefficients that correspond to the increase or decrease in sales at any given month. the new regression equation is as follows: 
+
+$sales = -69628.03 + x(845.80 +175.69 + 317.32 -25.28) + monthfactor(y)$
+
+One should interpret the coeff of the month factor variables as the increase or decrease in sales during that month. For example if the month is july then we should expect 176 fewer sales.
+
+ii) The training set $r^2$ is .8698, the variables that are significant are the monthfactors for July and March, alongside Wrangler Queries.
+
+iii) I think that including the variable MonthFactor does improve the quality of the model, however I do worry about overfitting since the statistical significance of the months was only true on 2 of the 11 months. Therefore it is hard to believe that there is extreme seasonality with Wranglers, it could just be a slight correlation.
+
+iv) Instead of having the months as factors of one month I would slice them based on a couple of months. In this case Fall, Spring, Summer, Winter. For example I would set the month factor for isWinter to be 1 if the months that the sales we are looking at are November, December, and January. In this way we are looking at actual seasonality instead of just one month, since one month is hardly equivalent to a season. I think this new way would improve the model because we will have less coefficients ultimately in our regression equation.
+
+c)
+
+```{r}
+wranglerSales.final <- lm(WranglerSales ~ Unemployment + WranglerQueries + CPI.All + MonthFactor, data = wrangler.train)
+
+summary(wranglerSales.final)
+
+p = predict(wranglerSales.final, wrangler.test)
+
+test = wrangler.test$WranglerSales
+
+rsq <- function (x, y) cor(x, y) ^ 2
+
+rsq(p, test)
+
+wrangler
+
+
+
+```
+
+The training set $r^2$ is .7943, the test set data has an $r^2$ of .63. Based on the r squared value of our model, I do not think it will provide much to Jeep, considering that the r squared value is very low. Maybe a linear model is not a great fit for this dataset and I think that we can increase the r squared value if we were to have a less granulated coefficient array for the season, instead of it being one month it should be a collection of months that represent a season.
+
+d)
+I would maybe look at the search queries for a competing model to the jeep wrangler, one that I looked at was the ford bronco. I would suspect that queries for the bronco are inversely correlated with sales of the jeep, rationale being that if more people are looking up information on the bronco and are interested in buying the bronco, that means less individuals are interested in competing brands or models, in this case the Jeep Wrangler.
+
+```{r}
+
+wranglerSales.bronco <- lm(WranglerSales ~ Unemployment + WranglerQueries + CPI.All + MonthFactor + fordquery, data = wrangler.train)
+
+z = predict(wranglerSales.bronco, wrangler.test)
+
+rsq(z,test)
+
+summary(wranglerSales.bronco)
+
+
+
+```
+
+The resulting r squared value is .6419, which means it has increased and has thus added some predictive value. Looking at the table however, there is a very high p value associated with the ford query, indicating it is not as significant of a variable as we may think. I think that ultimately because there are so many other options other than ford bronco for a substitute, this does not help our model, if we were to replace this with queries for any other competing model to the wrangler it might make it more accurate.
+

@@ -1,0 +1,134 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+author: 3032247297
+
+2)
+
+```{r}
+library(readr)
+library(caTools)
+df <- read_csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw2/framingham.csv")
+
+```
+
+
+```{r}
+
+set.seed(123)
+
+
+
+sample = sample.split(df$male, SplitRatio = .7)
+train = subset(df, sample == TRUE)
+test = subset(df, sample == FALSE)
+
+
+```
+
+i)
+
+```{r}
+model <- glm(TenYearCHD~ glucose + heartRate + BMI + diaBP +sysBP + totChol + diabetes + prevalentHyp + prevalentStroke + BPMeds + cigsPerDay + currentSmoker + age + education + male, data = train)
+
+summary(model)
+```
+
+$$tenyearCHD = -.06 - .0003(heartRate) -.002(diaBP) +.00008(totChol) +.0063(prevalentHyp) +.01(BPmeds) + .022(currentsmoker) -.009(educationHighschool) +.01(educationsomehighschool) +.0009(glucose) +.002(BMI) + .003(sysBP) +.027(diabetes) +.07(prevalentStroke) +.002(cigsperday) +.006(age) -.004(educationsomecollege) + .05(male)$$
+
+ii) 
+According to the summary of the significance of the features, the most important risk factors in predecting whether or not someone will have CHD in 10 years is their age. When it comes to age, every increase in age increases the log odds of 10yearCHD by .007
+
+iii)
+
+$$ 560000(p/4) + 60000(1-p/4) = 500000(p)$$
+
+$p = .16$
+
+iv)
+
+```{r}
+test$prediction = predict(model, newdata = test, type = 'response')
+
+high_risk <- subset(test, prediction >= .16)
+low_risk <- subset(test, prediction < .16)
+
+tp = nrow(subset(test, prediction >= .16 & TenYearCHD == 1))
+fn = nrow(subset(test, prediction < .16 & TenYearCHD == 1))
+fp = nrow(subset(test, prediction >= .16 & TenYearCHD == 0))
+tn = nrow(subset(test, prediction < .16 & TenYearCHD == 0))
+
+tpr = tp/(tp + fn)
+fpr = fp/(fp+tn)
+accuracy = (tp+tn)/(tp+fp+fn+tn)
+
+tpr
+fpr
+accuracy
+```
+
+the true positive rate is .68
+the false positive rate is .377
+the accuracy is .63
+
+The tpr tells us the number of people who contracted CHD in 10 years that were correctly identified.
+
+The fpr tells us the proportion of negative cases incorrectly identified by the model
+
+the accuracy tells us the proportion of the data that was correctly identified.
+
+
+v)
+
+
+if chd is not affected by treatment:
+$$EXPECTED COST = \frac{36(500000) + 131(560000) + 423(60000)}{1507+423+131+136}$$
+
+Which equals 106417.5 dollars.
+
+This assumption does not make much sense because if taking medecine does not have an affect on the development of the condition, then the premise of this study is invalid.
+
+if taking preventative medicines does reduce the outcome of CHD:
+
+$$EC = \frac{35(500000) + 13(.08)(560000) + 23(1.2)(60000)}{1097}$$
+ so the expected cost in this case is 97670
+ 
+vi)
+```{r}
+predTest = predict(model, test, type = 'response')
+table(test$TenYearCHD, predTest > .999)
+```
+
+vii)
+```{r}
+new <- data.frame(male=0, age=51, education = 'College', currentSmoker=1, cigsPerDay = 20, BPMeds = 0, prevalentStroke = 0, prevalentHyp = 1, diabetes = 0, totChol = 220, sysBP = 140, diaBP = 100, BMI = 31, heartRate = 59, glucose = 78)
+
+predict(model, newdata = new, type = 'response')
+```
+ the predicted probability that this patient will contract CHD in the next 10 years is .17, we should prescribe the medecine bc the patent probabiity exceeds the threshold.
+
+
+b)
+```{r}
+
+library(plotROC)
+
+ggplot(test, aes(d = test$TenYearCHD, m = test$prediction)) + geom_roc()
+```
+
+the ROC curve looks at the tradeoff between fpr and tpr. We want a high tpr and low fpr, if we decrease the threshold to allow for more positive predictions, the classifier will have a higher fpr as we classify more predictions as yes. The ROC curve looks almost like a step function that increases and plateaus at intervals.
+
+AUC = .739
+
+c)
+
+To break even, the formula is 
+
+$$(300000 + c)(.0294) + .09706c = .1176(300000)$$
+c = 26460
+
+d)
+There are many issues with this study and this analysis, prescribing a medication when we do not even know if it will have a preventitive affect is both alarming and could introduce some horrible side effects. One way to fix this is to run a small case study or do some analysis that would allow us to holistically look at the sorts of things going on
+

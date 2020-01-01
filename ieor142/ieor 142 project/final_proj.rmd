@@ -1,0 +1,91 @@
+---
+title: "ieor_finalproj"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Importing Data
+
+```{r}
+library(readr)
+nba2016 <- read_csv("2016-2017.csv")
+nba2017 <- read_csv("2017-2018.csv")
+nba2018 <- read_csv("2018-2019.csv")
+salaries <- read_csv("salarydata.csv",skip = 1)
+salaries <- salaries[c(2:9, 11)]
+
+salary2016 <- read_csv("salary2016.csv", col_types = cols(X4 = col_skip()), skip = 1)
+
+salary2017 <- read_csv("salary2017.csv", skip = 1)
+
+salary2018 <- read_csv("salary2018.csv", skip = 1)
+```
+
+# Cleaning data
+
+```{r}
+nba2016$player_name <- sapply(strsplit(nba2016$Player, "\\\\"), `[`, 1)
+nba2016$player_id <- sapply(strsplit(nba2016$Player, "\\\\"), `[`, 2)
+nba2017$player_name <- sapply(strsplit(nba2017$Player, "\\\\"), `[`, 1)
+nba2017$player_id <- sapply(strsplit(nba2017$Player, "\\\\"), `[`, 2)
+nba2018$player_name <- sapply(strsplit(nba2018$Player, "\\\\"), `[`, 1)
+nba2018$player_id <- sapply(strsplit(nba2018$Player, "\\\\"), `[`, 2)
+
+salaries$player_name <-  sapply(strsplit(salaries$Player, "\\\\"), `[`, 1)
+salaries$player_id <-  sapply(strsplit(salaries$Player, "\\\\"), `[`, 2)
+
+salary2016$player_name <- sapply(strsplit(salary2016$NAME, ","), `[`, 1)
+salary2017$player_name <- sapply(strsplit(salary2017$NAME, ","), `[`, 1)
+salary2018$player_name <- sapply(strsplit(salary2018$NAME, ","), `[`, 1)
+
+name_id <- salaries[c('player_name', 'player_id')]
+
+
+salary2016 <- merge(name_id,salary2016,by=c("player_name"))[c('player_name', 'player_id', 'SALARY')]
+salary2017 <- merge(name_id,salary2017,by=c("player_name"))[c('player_name', 'player_id', 'SALARY')]
+salary2018 <- merge(name_id,salary2018,by=c("player_name"))[c('player_name', 'player_id', 'SALARY')]
+
+nba2016 <- subset(nba2016, select = -c(1,2))[,c(29,30,1:28)]
+nba2017 <- subset(nba2017, select = -c(1,2))[,c(29,30,1:28)]
+nba2018 <- subset(nba2018, select = -c(1,2))[,c(29,30,1:28)]
+
+
+merged2016 <- unique(subset(na.omit( merge(nba2016, salary2016, by = 'player_id', all.x = TRUE)), select = -c(31))[,c(1,2,31,3:30)])
+
+merged2017 <- unique(subset(na.omit( merge(nba2017, salary2017, by = 'player_id', all.x = TRUE)), select = -c(31))[,c(1,2,31,3:30)])
+
+merged2018 <- unique(subset(na.omit( merge(nba2018, salary2018, by = 'player_id', all.x = TRUE)), select = -c(31))[,c(1,2,31,3:30)])
+
+merged2016$fantasy_points <- merged2016$`3P`*3 + merged2016$`2P`*2 + merged2016$TRB*1.2 + merged2016$AST*1.5 + merged2016$BLK*2 + merged2016$STL*2 + merged2016$TOV*-1
+
+merged2017$fantasy_points <- merged2017$`3P`*3 + merged2017$`2P`*2 + merged2017$TRB*1.2 + merged2017$AST*1.5 + merged2017$BLK*2 + merged2017$STL*2 + merged2017$TOV*-1
+
+merged2018$fantasy_points <- merged2018$`3P`*3 + merged2018$`2P`*2 + merged2018$TRB*1.2 + merged2018$AST*1.5 + merged2018$BLK*2 + merged2018$STL*2 + merged2018$TOV*-1
+
+merged2016 <- merged2016[,c(1,2,3,32,4:31)] 
+merged2017 <- merged2017[,c(1,2,3,32,4:31)]
+merged2018 <- merged2018[,c(1,2,3,32,4:31)]
+
+merged2016$SALARY <- as.numeric(merged2016$SALARY) 
+merged2017$SALARY <- as.numeric(merged2017$SALARY) 
+merged2018$SALARY <- as.numeric(merged2018$SALARY) 
+
+
+```
+
+# Final cleaned Data
+```{r}
+merged2016
+merged2017
+merged2018
+
+#write.csv(merged2016, file = "C:\\Users\\rosha\\Documents\\important\\actually_important\\Fall_2019_UCB\\IEOR142\\Project\\new_stuff\\merged2016.csv", row.names = FALSE)
+
+#write.csv(merged2017, file = 'C:\\Users\\rosha\\Documents\\important\\actually_important\\Fall_2019_UCB\\IEOR142\\Project\\new_stuff\\merged2017.csv', row.names = FALSE)
+
+#write.csv(merged2018, file = 'C:\\Users\\rosha\\Documents\\important\\actually_important\\Fall_2019_UCB\\IEOR142\\Project\\new_stuff\\merged2018.csv', row.names = FALSE)
+```
+

@@ -1,0 +1,179 @@
+---
+output: pdf_document
+---
+
+```{r}
+library(GGally)
+library(ROCR)
+library(car) 
+library(dplyr)
+library(ggplot2)
+library(caTools) 
+library(rpart) 
+library(rpart.plot) 
+library(caret) 
+library(randomForest)
+library(MASS)
+library(gbm)
+```
+
+
+2)
+
+a)
+
+```{r}
+
+set.seed(456)
+
+library(readr)
+Letters <- read_csv("C:/Users/Murtz.Kizilbash/Desktop/ieor142/hw3/Letters.csv")
+head(letters)
+
+Letters$isB <- as.factor(Letters$letter == "B")
+train.ids = sample(nrow(Letters), 0.65*nrow(Letters))
+Letters.train = Letters[train.ids,]
+Letters.test = Letters[-train.ids,]
+
+table(Letters.train$isB)
+table(Letters.test$isB)
+
+```
+
+
+
+
+
+i)
+
+```{r}
+Letters$isB = factor(Letters$letter=="B")
+spl = sample.split(Letters$isB, SplitRatio = 0.5)
+train = subset(Letters, spl)
+test = subset(Letters, !spl)
+"the accuracy of the baseline method is:" 
+1 - mean(test$isB == "TRUE")
+
+
+```
+
+ii) 
+
+```{r}
+mod <- glm(isB ~ xbox + ybox + width + height + onpix + xbar + ybar + x2bar + y2bar + xybar + x2ybar + xy2bar + xedge + xedgeycor + yedge + yedgexcor, data=Letters.train, family="binomial")
+
+summary(mod)
+vif(mod)
+
+predtest = predict(mod, Letters.test, type = 'response')
+summary(predtest)
+
+
+
+
+```
+
+iii)
+
+```{r}
+table(Letters.test$isB, predtest > 0.5)
+
+log.pred = prediction(predtest, Letters.test$isB)
+
+logperf = performance(log.pred, 'tpr', 'fpr')
+
+plot(logperf, colorize = TRUE)
+
+```
+```{r}
+print('the auc is:')
+as.numeric(performance(log.pred, 'auc')@y.values)
+```
+
+
+iv)
+```{r}
+
+CARTb <- rpart(isB ~ . - letter, data = train, method='class')
+CARTb_predict <- predict(CARTb, newdata = test, type = "class")
+table(test$isB, CARTb_predict)
+" "
+"the accuracy of the CART model on the test set, is:"
+cartModelAccuracy = (1121+329) / nrow(test)
+cartModelAccuracy
+
+```
+
+
+v) 
+```{r}
+#DONE
+#install.packages("randomForest")
+
+m2 = randomForest(isB ~ . - letter, train)
+pred <- predict(m2, newdata = test, type = "class")
+table(test$isB, pred)
+" "
+"[Part v] The accuracy of the Random Forest Model on the test set is:"
+
+randomForestAccuracy = (1158+361) / nrow(test)
+randomForestAccuracy
+
+```
+
+vi)
+```{r}
+
+"CART Model Accuracy = "
+cartModelAccuracy
+""
+"Random Forest Model Accuracy = "
+randomForestAccuracy
+
+"Comparing the accuracy of the logistic regression, CART, and Random Forest Models, the one that performs best on the test set is "
+
+```
+
+
+
+b)
+
+(i)
+```{r}
+
+spl = sample.split(Letters$isB, SplitRatio = 0.5)
+train = subset(Letters, spl)
+test = subset(Letters, !spl)
+
+table(test$letter)
+"The baseline model predicts P as the most frequent result."
+"The baseline accuracy is = "
+401 / nrow(test)
+
+```
+
+(ii)
+```{r}
+#LDA Model.
+
+
+```
+
+(iii)
+```{r}
+CARTb <- rpart(letter ~ . - isB, data = train, method='class')
+prp(CARTb)
+
+CARTb_predict <- predict(CARTb, newdata = test, type = "class")
+length(CARTb_predict)
+table(test$letter, CARTb_predict)
+" " 
+"The test set accuracy of my CART model is ="
+(355+237+377+327)/1558
+```
+
+(v)
+```{r}
+
+
+```

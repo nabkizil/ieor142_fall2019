@@ -1,0 +1,485 @@
+Name,Team,Salary
+NAME,TEAM,SALARY
+"Stephen Curry, PG",Golden State Warriors,37457154.00
+"Blake Griffin, PF",LA Clippers,32088932.00
+"Paul Millsap, PF",Denver Nuggets,31269231.00
+"Kyle Lowry, PG",Toronto Raptors,31200000.00
+"Gordon Hayward, SF",Boston Celtics,29727900.00
+"Mike Conley, PG",Memphis Grizzlies,28530608.00
+"Russell Westbrook, PG",Oklahoma City Thunder,28530608.00
+"James Harden, PG",Houston Rockets,28299399.00
+"DeMar DeRozan, SG",Toronto Raptors,27739975.00
+"Al Horford, C",Boston Celtics,27734406.00
+NAME,TEAM,SALARY
+"Carmelo Anthony, PF",Oklahoma City Thunder,26243760.00
+"Damian Lillard, PG",Portland Trail Blazers,26153057.00
+"Otto Porter Jr., SF",Washington Wizards,26011913.00
+"Jrue Holiday, SG",New Orleans Pelicans,25686667.00
+"Bradley Beal, SG",Washington Wizards,25434263.00
+"Andre Drummond, C",Detroit Pistons,25434263.00
+"Hassan Whiteside, C",Miami Heat,25434262.00
+"Joel Embiid, C",Philadelphia 76ers,25250000.00
+"Chris Paul, PG",Houston Rockets,24599495.00
+"Giannis Antetokounmpo, PF",Milwaukee Bucks,24157303.00
+NAME,TEAM,SALARY
+"Kevin Love, PF",Cleveland Cavaliers,24119025.00
+"Nicolas Batum, SG",Charlotte Hornets,24000000.00
+"CJ McCollum, SG",Portland Trail Blazers,23962573.00
+"Dwight Howard, C",Charlotte Hornets,23819725.00
+"Anthony Davis, PF",New Orleans Pelicans,23775506.00
+"Harrison Barnes, SF",Dallas Mavericks,23112004.00
+"Chandler Parsons, SF",Memphis Grizzlies,23112004.00
+"Brook Lopez, C",Los Angeles Lakers,22642650.00
+"Marc Gasol, C",Memphis Grizzlies,22642350.00
+"DeAndre Jordan, C",LA Clippers,22642350.00
+NAME,TEAM,SALARY
+"Steven Adams, C",Oklahoma City Thunder,22471910.00
+"Rudy Gobert, C",Utah Jazz,21924719.00
+"Serge Ibaka, PF",Toronto Raptors,21666667.00
+"LaMarcus Aldridge, C",San Antonio Spurs,21461010.00
+"Victor Oladipo, SG",Indiana Pacers,21000000.00
+"Danilo Gallinari, PF",LA Clippers,20559599.00
+"Ryan Anderson, F",Houston Rockets,19578455.00
+"Paul George, SF",Oklahoma City Thunder,19508958.00
+"Jimmy Butler, SF",Minnesota Timberwolves,19301070.00
+"Tyler Johnson, SG",Miami Heat,19245370.00
+NAME,TEAM,SALARY
+"John Wall, PG",Washington Wizards,19169800.00
+"Jeff Teague, PG",Minnesota Timberwolves,19000000.00
+"George Hill, PG",Sacramento Kings,19000000.00
+"Kyrie Irving, PG",Boston Celtics,18868626.00
+"Kawhi Leonard, SF",San Antonio Spurs,18868626.00
+"Enes Kanter, C",New York Knicks,18622514.00
+"Joakim Noah, C",New York Knicks,18530000.00
+"Allen Crabbe, SG",Brooklyn Nets,18500000.00
+"Goran Dragic, PG",Miami Heat,18109175.00
+"Kent Bazemore, SG",Atlanta Hawks,18089887.00
+NAME,TEAM,SALARY
+"DeMarcus Cousins, C",New Orleans Pelicans,18063850.00
+"Wesley Matthews, SG",Dallas Mavericks,17884176.00
+"Klay Thompson, SG",Golden State Warriors,17826150.00
+"Kentavious Caldwell-Pope, SG",Los Angeles Lakers,17745894.00
+"Draymond Green, PF",Golden State Warriors,17469565.00
+"Tristan Thompson, C",Cleveland Cavaliers,17469565.00
+"Tim Hardaway Jr., SG",New York Knicks,17325000.00
+"Luol Deng, F",Los Angeles Lakers,17190000.00
+"Evan Turner, SG",Portland Trail Blazers,17131148.00
+"Reggie Jackson, PG",Detroit Pistons,17043478.00
+NAME,TEAM,SALARY
+"Bismack Biyombo, C",Orlando Magic,17000000.00
+"Evan Fournier, SG",Orlando Magic,17000000.00
+"Jonas Valanciunas, C",Toronto Raptors,16539326.00
+"Pau Gasol, C",San Antonio Spurs,16000000.00
+"Tobias Harris, SF",LA Clippers,16000000.00
+"Timofey Mozgov, C",Brooklyn Nets,16000000.00
+"Ian Mahinmi, C",Washington Wizards,15944154.00
+"Dennis Schroder, PG",Atlanta Hawks,15500000.00
+"Tony Parker, G",San Antonio Spurs,15453126.00
+"DeMarre Carroll, SF",Brooklyn Nets,15400000.00
+NAME,TEAM,SALARY
+"Eric Bledsoe, PG",Phoenix Suns,15000000.00
+"Andre Iguodala, SG",Golden State Warriors,14814815.00
+"JR Smith, G",Cleveland Cavaliers,14720000.00
+"James Johnson, PF",Miami Heat,14651700.00
+"Robin Lopez, C",Chicago Bulls,14357750.00
+"Ricky Rubio, PG",Utah Jazz,14275000.00
+"Joe Ingles, SF",Utah Jazz,14136364.00
+"Gorgui Dieng, C",Minnesota Timberwolves,14112360.00
+"Marvin Williams, PF",Charlotte Hornets,14087500.00
+"Mason Plumlee, PF",Denver Nuggets,14041096.00
+NAME,TEAM,SALARY
+"Taj Gibson, PF",Minnesota Timberwolves,14000000.00
+"Thaddeus Young, PF",Indiana Pacers,13964045.00
+"Brandon Knight, PG",Cleveland Cavaliers,13618750.00
+"Cody Zeller, PF",Charlotte Hornets,13528090.00
+"Michael Kidd-Gilchrist, SF",Charlotte Hornets,13000000.00
+"Tyson Chandler, C",Phoenix Suns,13000000.00
+"Eric Gordon, SG",Houston Rockets,12943020.00
+"Kenneth Faried, F",Denver Nuggets,12921348.00
+"Marcin Gortat, C",Washington Wizards,12782609.00
+"Nikola Vucevic, C",Orlando Magic,12750000.00
+NAME,TEAM,SALARY
+"Austin Rivers, PG",LA Clippers,12650000.00
+"Kelly Olynyk, PF",Miami Heat,12537527.00
+"Jeremy Lin, G",Brooklyn Nets,12516746.00
+"Miles Plumlee, C",Atlanta Hawks,12500000.00
+"Nikola Mirotic, F",Chicago Bulls,12500000.00
+"Jordan Clarkson, PG",Los Angeles Lakers,12500000.00
+"Zach Randolph, F",Sacramento Kings,12307692.00
+"Courtney Lee, SG",New York Knicks,12253780.00
+"Solomon Hill, SF",New Orleans Pelicans,12236535.00
+"Nikola Pekovic, C",Minnesota Timberwolves,12100000.00
+NAME,TEAM,SALARY
+"Wilson Chandler, SF",Denver Nuggets,12016854.00
+"Derrick Favors, PF",Utah Jazz,12000000.00
+"Kemba Walker, PG",Charlotte Hornets,12000000.00
+"Dion Waiters, SG",Miami Heat,11550000.00
+"John Henson, PF",Milwaukee Bucks,11327466.00
+"Omer Asik, C",Chicago Bulls,11286516.00
+"Monta Ellis, SG",Indiana Pacers,11227000.00
+"Alec Burks, SG",Utah Jazz,10845506.00
+"Patty Mills, PG",San Antonio Spurs,10714286.00
+"Tony Snell, SG",Milwaukee Bucks,10607143.00
+NAME,TEAM,SALARY
+"Bojan Bogdanovic, SF",Indiana Pacers,10500000.00
+"Terrence Ross, SG",Orlando Magic,10500000.00
+"Mirza Teletovic, PF",Milwaukee Bucks,10500000.00
+"Robert Covington, PF",Philadelphia 76ers,10464092.00
+"Iman Shumpert, SG",Cleveland Cavaliers,10337079.00
+"Maurice Harkless, SF",Portland Trail Blazers,10162922.00
+"Jon Leuer, F",Detroit Pistons,10002681.00
+"Jared Dudley, SF",Phoenix Suns,10000000.00
+"Danny Green, SG",San Antonio Spurs,10000000.00
+"Darren Collison, G",Indiana Pacers,10000000.00
+NAME,TEAM,SALARY
+"Al Jefferson, C",Indiana Pacers,10000000.00
+"Meyers Leonard, PF",Portland Trail Blazers,9904495.00
+"Matthew Dellavedova, PG",Milwaukee Bucks,9607500.00
+"Bogdan Bogdanovic, SG",Sacramento Kings,9412280.00
+"Norman Powell, SG",Toronto Raptors,9367200.00
+"Josh Richardson, SG",Miami Heat,9367200.00
+"Andre Roberson, SG",Oklahoma City Thunder,9259260.00
+"Dwight Powell, PF",Dallas Mavericks,9003125.00
+"Gerald Henderson, SG",Philadelphia 76ers,9000000.00
+"Avery Bradley, PG",LA Clippers,8808989.00
+NAME,TEAM,SALARY
+"Markieff Morris, PF",Washington Wizards,8600000.00
+"Jerryd Bayless, G",Philadelphia 76ers,8575916.00
+"JaMychal Green, PF",Memphis Grizzlies,8533333.00
+"Cristiano Felicio, PF",Chicago Bulls,8470980.00
+"E'Twaun Moore, SG",New Orleans Pelicans,8445024.00
+"Rudy Gay, SF",San Antonio Spurs,8406000.00
+"Kosta Koufos, C",Sacramento Kings,8393000.00
+"Markelle Fultz, PG",Philadelphia 76ers,8339880.00
+"Garrett Temple, SG",Sacramento Kings,8000000.00
+"Kevin Garnett, PF",Minnesota Timberwolves,8000000.00
+NAME,TEAM,SALARY
+"Yi Jianlian, SF",Los Angeles Lakers,8000000.00
+"Vince Carter, SG",Sacramento Kings,8000000.00
+"Cory Joseph, PG",Indiana Pacers,7945000.00
+"C.J. Miles, SG",Toronto Raptors,7936509.00
+"Shaun Livingston, G",Golden State Warriors,7692308.00
+"PJ Tucker, PF",Houston Rockets,7590035.00
+"Corey Brewer, F",Oklahoma City Thunder,7579366.00
+"Andrew Wiggins, SF",Minnesota Timberwolves,7574323.00
+"Kyle Korver, SG",Cleveland Cavaliers,7560000.00
+"Boris Diaw, C",Utah Jazz,7500000.00
+NAME,TEAM,SALARY
+"Jeremy Lamb, SG",Charlotte Hornets,7488372.00
+"Darrell Arthur, F",Denver Nuggets,7464912.00
+"Trevor Ariza, SF",Houston Rockets,7420912.00
+"Channing Frye, F",Los Angeles Lakers,7420912.00
+"Festus Ezeli, C",Portland Trail Blazers,7400000.00
+"Al-Farouq Aminu, PF",Portland Trail Blazers,7319035.00
+"Cole Aldrich, C",Minnesota Timberwolves,7300000.00
+"D.J. Augustin, PG",Orlando Magic,7250000.00
+"Dewayne Dedmon, C",Atlanta Hawks,7200000.00
+"Lance Thomas, F",New York Knicks,7119650.00
+NAME,TEAM,SALARY
+"D'Angelo Russell, SG",Brooklyn Nets,7019698.00
+"Lou Williams, SG",LA Clippers,7000000.00
+"Rodney Stuckey, PG",Indiana Pacers,7000000.00
+"Langston Galloway, SG",Detroit Pistons,7000000.00
+"Boban Marjanovic, C",LA Clippers,7000000.00
+"Jae Crowder, SF",Utah Jazz,6796117.00
+"Carl Landry, PF",Philadelphia 76ers,6500000.00
+"Ben Simmons, PG",Philadelphia 76ers,6434520.00
+"Tim Duncan, C",San Antonio Spurs,6393750.00
+"Andrew Nicholson, F",Guangzhou Guangzhou Long-Lions,6362998.00
+NAME,TEAM,SALARY
+"Ed Davis, C",Portland Trail Blazers,6352531.00
+"Lonzo Ball, PG",Los Angeles Lakers,6286560.00
+"Isaiah Thomas, PG",Los Angeles Lakers,6261395.00
+"Karl-Anthony Towns, C",Minnesota Timberwolves,6216840.00
+"Spencer Hawes, PF",Milwaukee Bucks,6061175.00
+"Josh McRoberts, PF",Dallas Mavericks,6021175.00
+"Shelvin Mack, G",Orlando Magic,6000000.00
+"Jonathon Simmons, G",Orlando Magic,6000000.00
+"Ish Smith, PG",Detroit Pistons,6000000.00
+"Alan Williams, C",Phoenix Suns,6000000.00
+NAME,TEAM,SALARY
+"Milos Teodosic, G",LA Clippers,6000000.00
+"Wesley Johnson, F",LA Clippers,5882260.00
+"Alex Abrines, G",Oklahoma City Thunder,5725000.00
+"Kristaps Porzingis, PF",New York Knicks,5697054.00
+"Jayson Tatum, PF",Boston Celtics,5645400.00
+"Jared Sullinger, C",Phoenix Suns,5628000.00
+"Brandon Ingram, SF",Los Angeles Lakers,5519400.00
+"Patrick Beverley, PG",LA Clippers,5513514.00
+"Luis Scola, F",Shanghai Sharks,5500000.00
+"Thabo Sefolosha, SF",Utah Jazz,5500000.00
+NAME,TEAM,SALARY
+"Jason Smith, F",Washington Wizards,5450000.00
+"Ben McLemore, SG",Memphis Grizzlies,5200000.00
+"Patrick Patterson, PF",Oklahoma City Thunder,5192000.00
+"Nick Young, G",Golden State Warriors,5192000.00
+"Josh Jackson, SG",Phoenix Suns,5090040.00
+"Mike Muscala, PF",Atlanta Hawks,5000000.00
+"C.J. Watson, PG",Orlando Magic,5000000.00
+"Marcus Morris Sr., SF",Boston Celtics,5000000.00
+"Dirk Nowitzki, F",Dallas Mavericks,5000000.00
+"Dante Exum, PG",Utah Jazz,4992385.00
+NAME,TEAM,SALARY
+"Jonathan Isaac, PF",Orlando Magic,4969080.00
+"Alexis Ajinca, C",LA Clippers,4961798.00
+"Jaylen Brown, SG",Boston Celtics,4956480.00
+"Mike Dunleavy, SG",Atlanta Hawks,4837500.00
+"Kyle Singler, F",Oklahoma City Thunder,4666500.00
+"De'Aaron Fox, PG",Sacramento Kings,4609200.00
+"Ron Baker, G",New York Knicks,4544000.00
+"Lauri Markkanen, PF",Chicago Bulls,4536120.00
+"Dragan Bender, SF",Phoenix Suns,4468800.00
+"Devin Harris, G",Denver Nuggets,4402546.00
+NAME,TEAM,SALARY
+"Justin Holiday, SF",Chicago Bulls,4384616.00
+"Greivis Vasquez, PG",Brooklyn Nets,4347826.00
+"Jamal Crawford, G",Minnesota Timberwolves,4328000.00
+"Emmanuel Mudiay, PG",New York Knicks,4294480.00
+"Kris Dunn, PG",Chicago Bulls,4221000.00
+"Nerlens Noel, C",Dallas Mavericks,4187599.00
+"Alex Len, C",Phoenix Suns,4187599.00
+"Frank Ntilikina, PG",New York Knicks,4155720.00
+"Julius Randle, PF",Los Angeles Lakers,4149242.00
+"Leandro Barbosa, G",Flamengo Flamengo,4000000.00
+NAME,TEAM,SALARY
+"Jordan Hill, C",Minnesota Timberwolves,4000000.00
+"Jonas Jerebko, F",Utah Jazz,4000000.00
+"Nemanja Bjelica, PF",Minnesota Timberwolves,3949999.00
+"Stanley Johnson, SF",Detroit Pistons,3940402.00
+"J.J. Barea, PG",Dallas Mavericks,3903900.00
+"Quincy Pondexter, F",Chicago Bulls,3853931.00
+"Willie Cauley-Stein, C",Sacramento Kings,3704160.00
+"Buddy Hield, SG",Sacramento Kings,3675480.00
+"Frank Kaminsky, PF",Charlotte Hornets,3627842.00
+"Drew Gooden, PF",Washington Wizards,3547000.00
+NAME,TEAM,SALARY
+"Will Barton, SG",Denver Nuggets,3533333.00
+"Paul Pierce, SF",LA Clippers,3527920.00
+"Mike Miller, SG",Denver Nuggets,3500000.00
+"Nene Hilario, C",Houston Rockets,3477600.00
+"Zaza Pachulia, C",Golden State Warriors,3477600.00
+"Jodie Meeks, G",Washington Wizards,3454500.00
+"Justise Winslow, SF",Miami Heat,3448926.00
+"Malik Monk, SG",Charlotte Hornets,3447480.00
+"Myles Turner, C",Indiana Pacers,3410284.00
+"Troy Daniels, SG",Phoenix Suns,3408520.00
+NAME,TEAM,SALARY
+"Jamal Murray, PG",Denver Nuggets,3355320.00
+"Elfrid Payton, PG",Phoenix Suns,3332340.00
+"Rajon Rondo, PG",New Orleans Pelicans,3300000.00
+"Doug McDermott, SF",New York Knicks,3294994.00
+"Anthony Tolliver, PF",Detroit Pistons,3290000.00
+"Tyreke Evans, G",Memphis Grizzlies,3290000.00
+"Tarik Black, C",Houston Rockets,3290000.00
+"Luke Kennard, SG",Detroit Pistons,3275280.00
+"Cameron Payne, G",Chicago Bulls,3263294.00
+"Dennis Smith Jr., PG",Dallas Mavericks,3218280.00
+NAME,TEAM,SALARY
+"Kelly Oubre Jr., SF",Washington Wizards,3208630.00
+"Ekpe Udoh, F",Utah Jazz,3200000.00
+"T.J. Warren, SF",Phoenix Suns,3152931.00
+"Marquese Chriss, PF",Phoenix Suns,3073800.00
+"Zach Collins, PF",Portland Trail Blazers,3057240.00
+"Seth Curry, SG",Dallas Mavericks,3028410.00
+"Mindaugas Kuzminskas, F",New York Knicks,3025035.00
+"Justin Hamilton, C",Beijing Ducks,3000000.00
+"Tibor Pleiss, C",Philadelphia 76ers,3000000.00
+"Tomas Satoransky, SG",Washington Wizards,3000000.00
+NAME,TEAM,SALARY
+"Bam Adebayo, C",Miami Heat,2955840.00
+"Jakob Poeltl, C",Toronto Raptors,2947320.00
+"Jusuf Nurkic, C",Portland Trail Blazers,2947305.00
+"Thon Maker, PF",Milwaukee Bucks,2799720.00
+"Cedi Osman, SF",Cleveland Cavaliers,2775000.00
+"Domantas Sabonis, PF",Indiana Pacers,2659800.00
+"Jerian Grant, G",Chicago Bulls,2639314.00
+"Donovan Mitchell, SG",Utah Jazz,2621280.00
+"Gary Harris, SG",Denver Nuggets,2550055.00
+"Delon Wright, PG",Toronto Raptors,2536898.00
+NAME,TEAM,SALARY
+"D.J. Wilson, PF",Milwaukee Bucks,2534280.00
+"Dario Saric, PF",Philadelphia 76ers,2526840.00
+"Taurean Prince, PF",Atlanta Hawks,2526840.00
+"Justin Anderson, G",Philadelphia 76ers,2516048.00
+"Manu Ginobili, G",San Antonio Spurs,2500000.00
+"Reggie Bullock, SG",Detroit Pistons,2500000.00
+"Bobby Portis, PF",Chicago Bulls,2494346.00
+"Rondae Hollis-Jefferson, SF",Brooklyn Nets,2470357.00
+"Bruno Caboclo, SF",Toronto Raptors,2451225.00
+"Kendrick Perkins, C",Cleveland Cavaliers,2445085.00
+NAME,TEAM,SALARY
+"Trey Lyles, PF",Denver Nuggets,2441400.00
+"T.J. Leaf, PF",Indiana Pacers,2407560.00
+"Justin Jackson, SF",Sacramento Kings,2365560.00
+"Shabazz Napier, PG",Portland Trail Blazers,2361360.00
+"Clint Capela, C",Houston Rockets,2334528.00
+"Devin Booker, SG",Phoenix Suns,2319360.00
+"John Collins, F",Atlanta Hawks,2299080.00
+"Denzel Valentine, SG",Chicago Bulls,2280600.00
+"Larry Nance Jr., PF",Los Angeles Lakers,2272391.00
+"Justin Patton, C",Minnesota Timberwolves,2247480.00
+NAME,TEAM,SALARY
+"Guerschon Yabusele, F",Boston Celtics,2247480.00
+"Brandon Jennings, G",Milwaukee Bucks,2222803.00
+"Mo Williams, PG",Denver Nuggets,2194500.00
+"Kyle Anderson, SF",San Antonio Spurs,2151704.00
+"Darius Miller, SF",New Orleans Pelicans,2100000.00
+"Juan Hernangomez, PF",Denver Nuggets,2076840.00
+"Sean Kilpatrick, G",Brooklyn Nets,2054856.00
+"Kendall Marshall, PG",Milwaukee Bucks,2048257.00
+"OG Anunoby, SF",Toronto Raptors,2034120.00
+"Jarrett Allen, C",Brooklyn Nets,2034120.00
+NAME,TEAM,SALARY
+"Terry Rozier, PG",Boston Celtics,1988520.00
+"Kevin Seraphin, C",Indiana Pacers,1974159.00
+"Ante Zizic, C",Cleveland Cavaliers,1952760.00
+"Tyler Zeller, C",Brooklyn Nets,1933941.00
+"Rashad Vaughn, G",Orlando Magic,1889040.00
+"Harry Giles III, PF",Sacramento Kings,1859400.00
+"Henry Ellenson, PF",Detroit Pistons,1857480.00
+"Eric Moreland, C",Detroit Pistons,1826300.00
+"Sam Dekker, F",LA Clippers,1794600.00
+"Terrance Ferguson, SG",Oklahoma City Thunder,1785000.00
+NAME,TEAM,SALARY
+"Furkan Korkmaz, SG",Philadelphia 76ers,1740000.00
+"Caris LeVert, SG",Brooklyn Nets,1702800.00
+"Malik Beasley, SG",Denver Nuggets,1700640.00
+"Spencer Dinwiddie, PG",Brooklyn Nets,1656092.00
+"Julyan Stone, G",Charlotte Hornets,1656092.00
+"DeAndre' Bembry, SG",Atlanta Hawks,1634640.00
+"Richaun Holmes, PF",Philadelphia 76ers,1600520.00
+"T.J. McConnell, PG",Philadelphia 76ers,1600520.00
+"Dwight Buycks, G",Detroit Pistons,1600520.00
+"Tyler Lydon, F",Denver Nuggets,1579440.00
+NAME,TEAM,SALARY
+"Archie Goodwin, SG",Portland Trail Blazers,1577230.00
+"Ryan Kelly, PF",Atlanta Hawks,1577230.00
+"Jeff Withey, C",Dallas Mavericks,1577230.00
+"Malachi Richardson, G",Toronto Raptors,1569360.00
+"Caron Butler, SF",Sacramento Kings,1551659.00
+"Willy Hernangomez, C",Charlotte Hornets,1544951.00
+"Isaiah Taylor, G",Atlanta Hawks,1544951.00
+"Pascal Siakam, PF",Toronto Raptors,1544951.00
+"Okaro White, F",Miami Heat,1544951.00
+"Troy Williams, F",New York Knicks,1544951.00
+NAME,TEAM,SALARY
+"Trey Burke, PG",New York Knicks,1544951.00
+"Quinn Cook, PG",Golden State Warriors,1544951.00
+"Rodney McGruder, SG",Miami Heat,1544951.00
+"Malcolm Brogdon, PG",Milwaukee Bucks,1544951.00
+"Mitch McGary, PF",Oklahoma City Thunder,1526040.00
+"Joffrey Lauvergne, F",San Antonio Spurs,1524305.00
+"Johnny O'Bryant III, PF",Charlotte Hornets,1524305.00
+"Tyler Ennis, G",Los Angeles Lakers,1524305.00
+"Elijah Millsap, F",Denver Nuggets,1524305.00
+"Jerami Grant, PF",Oklahoma City Thunder,1524305.00
+NAME,TEAM,SALARY
+"Marcelinho Huertas, PG",Houston Rockets,1500000.00
+"Tyus Jones, PG",Minnesota Timberwolves,1471382.00
+"Mario Chalmers, G",Memphis Grizzlies,1471382.00
+"Omri Casspi, F",Golden State Warriors,1471382.00
+"Nick Collison, F",Oklahoma City Thunder,1471382.00
+"KJ McDaniels, F",Oklahoma City Thunder,1471382.00
+"Raymond Felton, G",Oklahoma City Thunder,1471382.00
+"Josh Huestis, F",Oklahoma City Thunder,1471382.00
+"Anthony Morrow, SG",Portland Trail Blazers,1471382.00
+"Kris Humphries, PF",Philadelphia 76ers,1471382.00
+NAME,TEAM,SALARY
+"Raul Neto, PG",Utah Jazz,1471382.00
+"Damjan Rudez, SF",Orlando Magic,1471382.00
+"Aaron Brooks, G",Minnesota Timberwolves,1471382.00
+"Pat Connaughton, SG",Portland Trail Blazers,1471382.00
+"Joel Anthony, C",San Lorenzo San Lorenzo,1471382.00
+"JaVale McGee, C",Golden State Warriors,1471382.00
+"Montrezl Harrell, PF",LA Clippers,1471382.00
+"Luc Mbah a Moute, F",Houston Rockets,1471382.00
+"Damien Wilkins, SG",Indiana Pacers,1471382.00
+"Rakeem Christmas, PF",Indiana Pacers,1471382.00
+NAME,TEAM,SALARY
+"David West, F",Golden State Warriors,1471382.00
+"Kevon Looney, PF",Golden State Warriors,1471382.00
+"Andrew Bogut, C",Los Angeles Lakers,1471382.00
+"Beno Udrih, PG",Detroit Pistons,1471382.00
+"Chris McCullough, F",Washington Wizards,1471382.00
+"Nikola Jokic, C",Denver Nuggets,1471382.00
+"Josh Childress, F",Maccabi Haifa Maccabi Haifa,1471382.00
+"Donald Sloan, G",Denver Nuggets,1471382.00
+"Maalik Wayns, PG",Dallas Mavericks,1471382.00
+"Salah Mejri, C",Dallas Mavericks,1471382.00
+NAME,TEAM,SALARY
+"Jarell Martin, F",Memphis Grizzlies,1471382.00
+"Tony Allen, SG",New Orleans Pelicans,1471382.00
+"Willie Reed, C",LA Clippers,1471382.00
+"Perry Jones, SF",New Orleans Pelicans,1471382.00
+"Ian Clark, G",New Orleans Pelicans,1471382.00
+"Axel Toupane, SG",New Orleans Pelicans,1471382.00
+"Jeremy Evans, F",Atlanta Hawks,1471382.00
+"Caleb Swanigan, PF",Portland Trail Blazers,1465920.00
+"Jordan Adams, SG",Memphis Grizzlies,1465080.00
+"Richard Jefferson, F",Denver Nuggets,1454756.00
+NAME,TEAM,SALARY
+"Kyle Kuzma, PF",Los Angeles Lakers,1423560.00
+"Tony Bradley, C",Utah Jazz,1414920.00
+"Derrick White, PG",San Antonio Spurs,1404600.00
+"Josh Hart, SG",Los Angeles Lakers,1394520.00
+"Timothe Luwawu-Cabarrot, SG",Philadelphia 76ers,1386600.00
+"Josh Smith, PF",New Orleans Pelicans,1379940.00
+"Dwayne Bacon, SG",Charlotte Hornets,1378242.00
+"Tyler Dorsey, G",Atlanta Hawks,1378242.00
+"Khem Birch, C",Orlando Magic,1378242.00
+"Wes Iwundu, SF",Orlando Magic,1378242.00
+NAME,TEAM,SALARY
+"Damyean Dotson, SG",New York Knicks,1378242.00
+"Jordan Bell, PF",Golden State Warriors,1378242.00
+"Jaylen Morris, G",Atlanta Hawks,1378242.00
+"Sterling Brown, SG",Milwaukee Bucks,1378242.00
+"Rodney Purvis, G",Orlando Magic,1378242.00
+"Ike Anigbogu, C",Indiana Pacers,1378242.00
+"Antonius Cleveland, SG",Dallas Mavericks,1378242.00
+"Alfonzo McKinnie, SF",Toronto Raptors,1378242.00
+"Alex Poythress, F",Indiana Pacers,1378242.00
+"Guillermo Hernangomez, C",New York Knicks,1350000.00
+NAME,TEAM,SALARY
+"Sasha Kaun, C",Philadelphia 76ers,1333240.00
+"Brice Johnson, PF",Memphis Grizzlies,1331160.00
+"Jarrod Uthoff, F",Memphis Grizzlies,1312611.00
+"Patrick McCaw, SG",Golden State Warriors,1312611.00
+"Kyle Wiltjer, F",Toronto Raptors,1312611.00
+"Davis Bertans, SF",San Antonio Spurs,1312611.00
+"Carrick Felix, SG",Washington Wizards,1312611.00
+"Chasson Randle, G",Washington Wizards,1312611.00
+"Daniel Ochefu, PF",Washington Wizards,1312611.00
+"Semaj Christon, PG",Oklahoma City Thunder,1312611.00
+NAME,TEAM,SALARY
+"Bryn Forbes, SG",San Antonio Spurs,1312611.00
+"Dejounte Murray, PG",San Antonio Spurs,1312611.00
+"Tyler Ulis, G",Phoenix Suns,1312611.00
+"Yogi Ferrell, PG",Dallas Mavericks,1312611.00
+"Chinanu Onuaku, C",Houston Rockets,1312611.00
+"Skal Labissiere, PF",Sacramento Kings,1312611.00
+"Cheick Diallo, PF",New Orleans Pelicans,1312611.00
+"Patricio Garino, SG",Orlando Magic,1312611.00
+"Jake Layman, SF",Portland Trail Blazers,1312611.00
+"AJ Hammons, C",Miami Heat,1312611.00
+NAME,TEAM,SALARY
+"Stephen Zimmerman, C",Los Angeles Lakers,1312611.00
+"Ivica Zubac, C",Los Angeles Lakers,1312611.00
+"DeQuan Jones, SF",Indiana Pacers,1312611.00
+"Shawn Long, C",Melbourne Melbourne United,1312611.00
+"Deyonta Davis, F",Memphis Grizzlies,1312611.00
+"Michael Gbinije, SG",Golden State Warriors,1312611.00
+"Andrew Harrison, G",Memphis Grizzlies,1312611.00
+"Kalin Lucas, G",Detroit Pistons,1312611.00
+"Isaiah Whitehead, G",Brooklyn Nets,1312611.00
+"Dorian Finney-Smith, SF",Dallas Mavericks,1312611.00
+NAME,TEAM,SALARY
+"Edy Tavares, C",Cleveland Cavaliers,1312611.00
+"Diamond Stone, C",Chicago Bulls,1312611.00
+"Paul Zipser, F",Chicago Bulls,1312611.00
+"Wayne Selden, G",Memphis Grizzlies,1312611.00
+"Marcus Georges-Hunt, F",Minnesota Timberwolves,1312611.00
+"Damian Jones, C",Golden State Warriors,1312611.00
+"Nicolas Brussino, SF",Atlanta Hawks,1312611.00
+"Sheldon Mac, SG",Atlanta Hawks,1312611.00
+"Khris Middleton, SF",Milwaukee Bucks,1300000.00
+"Semi Ojeleye, PF",Boston Celtics,1291892.00
